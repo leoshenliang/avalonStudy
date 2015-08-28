@@ -3,14 +3,31 @@
 <head>
     <meta charset="utf-8">
     <title>ms-controller</title>
-    <script src="/js/avalon.js"></script>
-    <script language="JavaScript">
+    <script src="../js/avalon.js"></script>
+    <script>
         avalon.ready(function(){
             avalon.define({
                 $id : "AAA",
-                name:"leoshen",
-                age:"28"
+                name: "蒋冶",
+                age: "33"
             });
+
+            avalon.define({
+                $id: "BBB",
+                name: "韩力",
+                age: "22"
+            });
+
+            avalon.define({
+                $id: "CCC",
+                name: "Jack"
+            });
+
+            avalon.define({
+                $id: "DDD",
+                name: "庆哥"
+            });
+
             avalon.scan();
         });
 
@@ -18,7 +35,16 @@
 </head>
 <body>
 <div ms-controller="AAA">
-    {{name}}:{{age}}
+    插值表达式  {{name}} : {{age}}
+    <div ms-controller="BBB">
+        优先显示自己的值  {{name}} : {{age}}
+        <div ms-controller="CCC">
+            自己没有值，controller继承父类值  {{name}} : {{age}}
+        </div>
+        <div ms-important="DDD">
+            自己没有值，important不继承父类值  {{name}} : {{age}}
+        </div>
+    </div>
 </div>
 
 </body>
