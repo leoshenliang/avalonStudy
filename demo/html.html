@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>ms-controller</title>
+    <script src="/js/avalon.js"></script>
+    <script language="JavaScript">
+        avalon.ready(function(){
+            avalon.define({
+                $id : "AAA",
+                name:"leoshen",
+                age:"28"
+            });
+            avalon.scan();
+        });
+
+    </script>
+</head>
+<body>
+<div ms-controller="AAA">
+    {{name}}:{{age}}
+</div>
+
+</body>
+
+</html>
